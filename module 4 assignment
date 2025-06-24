@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Module 4 Solution - All in One</title>
+</head>
+<body>
+  <h1>Check the Console for Output</h1>
+
+  <script>
+    // STEP 1: Wrap everything in IIFE
+    (function () {
+
+      // STEP 2: helloSpeaker object
+      var helloSpeaker = {};
+      helloSpeaker.speakWord = "Hello";
+      helloSpeaker.speak = function (name) {
+        console.log(helloSpeaker.speakWord + " " + name);
+      };
+
+      // STEP 3: byeSpeaker object
+      var byeSpeaker = {};
+      byeSpeaker.speakWord = "Good Bye";
+      byeSpeaker.speak = function (name) {
+        console.log(byeSpeaker.speakWord + " " + name);
+      };
+
+      // STEP 4: Array of names
+      var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+      // STEP 5: Loop over names and print message
+      for (var i = 0; i < names.length; i++) {
+        var firstLetter = names[i].charAt(0).toLowerCase();
+
+        if (firstLetter === 'j') {
+          byeSpeaker.speak(names[i]);
+        } else {
+          helloSpeaker.speak(names[i]);
+        }
+      }
+
+    })();
+  </script>
+</body>
+</html>
+run this file on browser by right click then inspect then on console you will see the output 
